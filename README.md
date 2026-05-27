@@ -23,6 +23,22 @@ The model features:
 - The gap between low- and high-tariff optimal imports widens as capital increases
 - Under tariff uncertainty, capital tracks shifts in the tariff regime, stabilizing at higher levels under low tariffs
 
+### Value Function
+
+![Value Function](plots/value_function.png)
+
+### Optimal Policy Functions
+
+| Import Policy | Investment Policy | Capital Policy |
+|:---:|:---:|:---:|
+| ![Imports](plots/imports.png) | ![Investment](plots/investment.png) | ![Capital](plots/capital_policy.png) |
+
+### Simulated Paths Under Stochastic Tariffs
+
+| Simulated Economic Dynamics | Tariff State Transitions |
+|:---:|:---:|
+| ![Simulated Paths](plots/simulated_paths.png) | ![State Transitions](plots/state_transitions.png) |
+
 The full analysis and discussion are in [`report/ox4_417finalreport.pdf`](report/ox4_417finalreport.pdf).
 
 ## Model

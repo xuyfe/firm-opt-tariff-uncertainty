@@ -139,7 +139,7 @@ pM = plot(
 plot!(pM, K_grid, 
       policy_M[:,2], 
       label="M*(K, τ_H)", ls=:dash)
-savefig(pM, "final_paper/plots/imports.png")
+savefig(pM, "plots/imports.png")
 
 pX = plot(
     K_grid[1:n_points], policy_X[1:n_points,1], 
@@ -150,7 +150,7 @@ pX = plot(
 plot!(pX, K_grid[1:n_points], 
       policy_X[1:n_points,2], 
       label="X*(K, τ_H)", ls=:dash)
-savefig(pX, "final_paper/plots/investment.png")
+savefig(pX, "plots/investment.png")
 
 pKp = plot(
     K_grid[1:n_points], policy_Kp[1:n_points, 1],
@@ -166,12 +166,12 @@ plot!(
     label = "K'*(K, τ = $(tau_grid[2]))",
     ls    = :dash,
     lw    = 2)
-savefig(pKp, "final_paper/plots/capital_policy.png")
+savefig(pKp, "plots/capital_policy.png")
 
 pV = plot(K_grid, V[:,1], label="V(K, τ_L)",
           xlabel="Capital", ylabel="Value", title="Value Function")
 plot!(pV, K_grid, V[:,2], label="V(K, τ_H)", ls=:dash)
-savefig(pV, "final_paper/plots/value_function.png")
+savefig(pV, "plots/value_function.png")
 
 # ───────────────────────────────────────────────────────────────────────────────
 # Find convergence to steady states
@@ -216,17 +216,17 @@ ts = 0:T
 p1 = plot(ts, K_path, lw=2, label="Kₜ",
           xlabel="t", ylabel="K", title="Convergence of Kₜ")
 hline!([K_star], ls=:dash, lw=2, label="K*")
-savefig(p1, "final_paper/plots/converge_K_exact.png")
+savefig(p1, "plots/converge_K_exact.png")
 
 p2 = plot(1:T, M_path, lw=2, label="Mₜ",
           xlabel="t", ylabel="M", title="Convergence of Mₜ")
 hline!([M_star], ls=:dash, lw=2, label="M*")
-savefig(p2, "final_paper/plots/converge_M_exact.png")
+savefig(p2, "plots/converge_M_exact.png")
 
 p3 = plot(1:T, X_path, lw=2, label="Xₜ",
           xlabel="t", ylabel="X", title="Convergence of Xₜ")
 hline!([X_star], ls=:dash, lw=2, label="X*")
-savefig(p3, "final_paper/plots/converge_X_exact.png")
+savefig(p3, "plots/converge_X_exact.png")
 
 
 # ───────────────────────────────────────────────────────────────────────────────
@@ -293,7 +293,7 @@ for s in 1:n_tau
            label="K* (τ=$(tau_grid[s]))", ls=:dash, lw=2)
 end
 plot!(legend=:topright, grid=true)
-savefig(p, "final_paper/plots/simulated_paths.png")
+savefig(p, "plots/simulated_paths.png")
 
 plt_state = plot(ts, state[ts],
     xlabel="t",
@@ -304,4 +304,4 @@ plt_state = plot(ts, state[ts],
     legend=false,
     title="Tariff State over Time (first $T_plot periods)" )
 hline!([1.5], ls=:dash, alpha=0.3)   # optional midpoint guide
-savefig(plt_state, "final_paper/plots/state_transitions.png")
+savefig(plt_state, "plots/state_transitions.png")
